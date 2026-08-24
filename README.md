@@ -6,10 +6,8 @@
 
   <title>RXHN GETS | Premium Fitness Supplements</title>
 
-  <meta
-    name="description"
-    content="RXHN GETS - Discover premium fitness supplements, whey protein, creatine and more."
-  >
+  <meta name="description"
+        content="RXHN GETS - Discover premium fitness supplements and nutrition products.">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
@@ -21,13 +19,14 @@
     }
 
     :root {
-      --bg: #090909;
-      --card: #121212;
-      --card2: #181818;
+      --bg: #080808;
+      --bg-light: #111111;
+      --card: #151515;
       --yellow: #ffb800;
+      --yellow-light: #ffca45;
       --white: #ffffff;
-      --gray: #a3a3a3;
-      --border: rgba(255,255,255,.09);
+      --gray: #a0a0a0;
+      --border: rgba(255,255,255,0.09);
     }
 
     html {
@@ -41,24 +40,24 @@
       overflow-x: hidden;
     }
 
-    /* NAVBAR */
+    /* ================= NAVBAR ================= */
 
     nav {
-      height: 75px;
+      height: 76px;
+      padding: 0 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 7%;
+      background: rgba(8,8,8,0.96);
       border-bottom: 1px solid var(--border);
-      background: rgba(9,9,9,.95);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(15px);
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 900;
       letter-spacing: -1px;
     }
@@ -68,18 +67,18 @@
     }
 
     .nav-links {
-      display: flex;
       list-style: none;
+      display: flex;
       gap: 30px;
     }
 
     .nav-links a {
-      color: var(--white);
       text-decoration: none;
-      font-size: .85rem;
-      font-weight: 600;
-      opacity: .75;
-      transition: .2s;
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0.7;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
@@ -87,57 +86,62 @@
       opacity: 1;
     }
 
-    .nav-icons {
+    .nav-right {
       display: flex;
+      align-items: center;
       gap: 18px;
-      font-size: 1.2rem;
     }
 
-    /* HERO */
+    .cart {
+      background: var(--yellow);
+      color: black;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    /* ================= HERO ================= */
 
     .hero {
-      min-height: 650px;
+      min-height: 620px;
       padding: 80px 8%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
       position: relative;
       overflow: hidden;
-
       background:
         radial-gradient(
-          circle at 75% 50%,
-          rgba(255,184,0,.16),
-          transparent 30%
+          circle at 85% 50%,
+          rgba(255,184,0,0.16),
+          transparent 28%
         ),
-        linear-gradient(
-          90deg,
-          #090909 30%,
-          #101010
-        );
+        linear-gradient(135deg,#080808,#101010);
     }
 
-    .hero-text {
-      width: 55%;
+    .hero-content {
+      width: 60%;
+      position: relative;
       z-index: 2;
     }
 
     .hero-tag {
       display: inline-block;
+      padding: 9px 15px;
+      border-radius: 30px;
       color: var(--yellow);
-      border: 1px solid rgba(255,184,0,.3);
-      background: rgba(255,184,0,.08);
-      padding: 8px 14px;
-      border-radius: 50px;
-      font-size: .75rem;
-      font-weight: 700;
-      margin-bottom: 22px;
+      border: 1px solid rgba(255,184,0,0.3);
+      background: rgba(255,184,0,0.07);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
     }
 
     .hero h1 {
       font-size: clamp(3rem,7vw,7rem);
-      line-height: .9;
       font-weight: 900;
+      line-height: 0.88;
       letter-spacing: -5px;
     }
 
@@ -146,11 +150,11 @@
     }
 
     .hero p {
-      margin-top: 25px;
-      max-width: 550px;
+      max-width: 560px;
       color: var(--gray);
       line-height: 1.8;
-      font-size: 1rem;
+      margin-top: 25px;
+      font-size: 0.95rem;
     }
 
     .hero-buttons {
@@ -160,12 +164,12 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 15px 28px;
-      border-radius: 8px;
       text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 0.8rem;
       font-weight: 800;
-      transition: .25s;
+      transition: 0.3s;
     }
 
     .btn-primary {
@@ -175,46 +179,57 @@
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 35px rgba(255,184,0,.25);
+      background: var(--yellow-light);
+      box-shadow: 0 15px 35px rgba(255,184,0,0.25);
     }
 
-    .btn-dark {
+    .btn-secondary {
       border: 1px solid var(--border);
       color: white;
     }
 
-    .btn-dark:hover {
+    .btn-secondary:hover {
       border-color: var(--yellow);
     }
 
-    .hero-image {
+    /* ================= HERO PRODUCT ================= */
+
+    .hero-product {
       position: absolute;
-      right: 5%;
-      bottom: 0;
-      width: 45%;
-      height: 100%;
+      right: 10%;
+      width: 420px;
+      height: 520px;
       display: flex;
-      align-items: end;
+      align-items: center;
       justify-content: center;
     }
 
-    .hero-image img {
-      width: 100%;
-      max-width: 600px;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: contrast(1.05);
-      mask-image: linear-gradient(
-        to bottom,
-        black 75%,
-        transparent 100%
-      );
+    .hero-product::before {
+      content: "";
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: rgba(255,184,0,0.1);
+      filter: blur(40px);
+      position: absolute;
     }
 
-    /* TRUST BAR */
+    .hero-product img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 30px 30px rgba(0,0,0,0.7));
+      transition: 0.4s;
+    }
 
-    .trust {
+    .hero-product img:hover {
+      transform: scale(1.04);
+    }
+
+    /* ================= TRUST BAR ================= */
+
+    .trust-bar {
       display: grid;
       grid-template-columns: repeat(4,1fr);
       border-top: 1px solid var(--border);
@@ -222,7 +237,7 @@
     }
 
     .trust-item {
-      padding: 28px;
+      padding: 25px;
       text-align: center;
       border-right: 1px solid var(--border);
     }
@@ -232,18 +247,18 @@
     }
 
     .trust-item h3 {
-      font-size: .9rem;
+      font-size: 0.8rem;
+      margin-bottom: 7px;
     }
 
     .trust-item p {
-      margin-top: 7px;
       color: var(--gray);
-      font-size: .75rem;
+      font-size: 0.7rem;
     }
 
-    /* SECTION */
+    /* ================= PRODUCTS ================= */
 
-    section.products-section {
+    .products-section {
       padding: 100px 8%;
     }
 
@@ -251,115 +266,122 @@
       display: flex;
       justify-content: space-between;
       align-items: end;
-      margin-bottom: 45px;
+      gap: 30px;
+      margin-bottom: 40px;
     }
 
     .section-header small {
       color: var(--yellow);
-      font-weight: 700;
+      font-size: 0.7rem;
       letter-spacing: 2px;
+      font-weight: 800;
     }
 
     .section-header h2 {
       margin-top: 10px;
-      font-size: clamp(2rem,4vw,3.5rem);
+      font-size: clamp(2.2rem,4vw,4rem);
+      font-weight: 900;
       letter-spacing: -2px;
     }
 
     .section-header p {
       color: var(--gray);
-      max-width: 350px;
-      line-height: 1.6;
-      font-size: .85rem;
+      font-size: 0.85rem;
+      max-width: 380px;
+      line-height: 1.7;
     }
 
-    /* SEARCH */
+    /* ================= SEARCH ================= */
 
-    .search-box {
+    .search-container {
       display: flex;
+      max-width: 550px;
       margin-bottom: 40px;
-      max-width: 500px;
     }
 
-    .search-box input {
+    .search-container input {
       width: 100%;
-      padding: 15px;
+      height: 50px;
+      padding: 0 18px;
       border: 1px solid var(--border);
-      background: #151515;
+      background: #121212;
       color: white;
       outline: none;
-      border-radius: 8px 0 0 8px;
+      border-radius: 9px 0 0 9px;
+      font-family: inherit;
     }
 
-    .search-box button {
-      padding: 0 22px;
-      background: var(--yellow);
+    .search-container button {
       border: none;
+      background: var(--yellow);
+      color: black;
+      padding: 0 22px;
+      font-weight: 800;
       cursor: pointer;
-      font-weight: bold;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 9px 9px 0;
     }
 
-    /* PRODUCTS */
+    /* ================= PRODUCT GRID ================= */
 
-    .products {
+    .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       gap: 22px;
     }
 
     .product-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      transition: .3s;
+      transition: 0.3s;
     }
 
     .product-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(255,184,0,.5);
-      box-shadow: 0 25px 60px rgba(0,0,0,.4);
+      border-color: rgba(255,184,0,0.5);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
     }
 
     .product-image {
-      height: 270px;
+      height: 310px;
       background: white;
-      padding: 15px;
+      padding: 20px;
       position: relative;
-      overflow: hidden;
     }
 
     .product-image img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      transition: .4s;
+      display: block;
+      transition: 0.3s;
     }
 
     .product-card:hover .product-image img {
-      transform: scale(1.07);
+      transform: scale(1.06);
     }
 
-    .badge-product {
+    .badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
       background: var(--yellow);
       color: black;
-      padding: 6px 10px;
-      font-size: .65rem;
-      font-weight: 800;
-      border-radius: 5px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 0.6rem;
+      font-weight: 900;
     }
 
     .product-info {
       padding: 20px;
     }
 
-    .product-brand {
+    .brand {
       color: var(--yellow);
-      font-size: .7rem;
+      font-size: 0.65rem;
       font-weight: 800;
       letter-spacing: 1px;
     }
@@ -368,56 +390,72 @@
       margin-top: 8px;
       font-size: 1rem;
       line-height: 1.5;
+      min-height: 48px;
     }
 
     .rating {
       margin-top: 10px;
       color: var(--yellow);
-      font-size: .75rem;
+      font-size: 0.75rem;
     }
 
-    .price-row {
+    .product-footer {
+      margin-top: 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-top: 18px;
+      justify-content: space-between;
+      gap: 10px;
     }
 
     .price {
-      font-size: 1.25rem;
-      font-weight: 800;
+      font-size: 1.3rem;
+      font-weight: 900;
     }
 
-    .buy {
+    .view-btn {
+      text-decoration: none;
       background: var(--yellow);
       color: black;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 7px;
-      font-size: .75rem;
-      font-weight: 800;
+      padding: 11px 15px;
+      border-radius: 8px;
+      font-size: 0.7rem;
+      font-weight: 900;
+      transition: 0.3s;
     }
 
-    /* CTA */
+    .view-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* ================= CTA ================= */
 
     .cta {
-      margin: 40px 8% 100px;
-      padding: 70px 8%;
+      margin: 0 8% 100px;
+      padding: 80px;
       border-radius: 25px;
       background:
         radial-gradient(
-          circle at 80% 30%,
-          rgba(255,184,0,.25),
-          transparent 35%
+          circle at 85% 30%,
+          rgba(255,184,0,0.25),
+          transparent 30%
         ),
         #151515;
+
       border: 1px solid var(--border);
     }
 
+    .cta small {
+      color: var(--yellow);
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
     .cta h2 {
-      font-size: clamp(2rem,5vw,4rem);
-      max-width: 700px;
-      letter-spacing: -2px;
+      margin-top: 15px;
+      font-size: clamp(2.5rem,5vw,5rem);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      max-width: 800px;
     }
 
     .cta h2 span {
@@ -425,22 +463,23 @@
     }
 
     .cta p {
-      margin-top: 20px;
       color: var(--gray);
-      max-width: 500px;
+      margin-top: 25px;
+      max-width: 550px;
       line-height: 1.7;
+      font-size: 0.9rem;
     }
 
-    /* FOOTER */
+    /* ================= FOOTER ================= */
 
     footer {
-      padding: 50px 8%;
       border-top: 1px solid var(--border);
+      padding: 60px 20px;
       text-align: center;
     }
 
     footer h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 900;
     }
 
@@ -451,12 +490,12 @@
     footer p {
       margin-top: 12px;
       color: var(--gray);
-      font-size: .8rem;
+      font-size: 0.75rem;
     }
 
-    /* MOBILE */
+    /* ================= MOBILE ================= */
 
-    @media(max-width:800px) {
+    @media (max-width: 850px) {
 
       nav {
         padding: 0 20px;
@@ -467,31 +506,31 @@
       }
 
       .hero {
+        padding: 70px 25px;
         min-height: 700px;
-        padding: 80px 25px;
-        align-items: flex-start;
       }
 
-      .hero-text {
+      .hero-content {
         width: 100%;
+        z-index: 3;
       }
 
-      .hero h1 {
-        letter-spacing: -3px;
-      }
-
-      .hero-image {
-        opacity: .3;
+      .hero-product {
         width: 100%;
         right: 0;
+        opacity: 0.22;
       }
 
-      .trust {
+      .trust-bar {
         grid-template-columns: repeat(2,1fr);
       }
 
       .trust-item {
         border-bottom: 1px solid var(--border);
+      }
+
+      .products-section {
+        padding: 70px 20px;
       }
 
       .section-header {
@@ -502,35 +541,65 @@
         margin-top: 20px;
       }
 
-      section.products-section {
-        padding: 70px 20px;
+      .cta {
+        margin: 0 20px 70px;
+        padding: 50px 25px;
       }
 
-      .products {
-        grid-template-columns: repeat(2,1fr);
-        gap: 12px;
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .cart {
+        padding: 8px 10px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
       .product-image {
-        height: 190px;
+        height: 200px;
+        padding: 10px;
       }
 
       .product-info {
-        padding: 14px;
+        padding: 12px;
       }
 
       .product-info h3 {
-        font-size: .8rem;
+        font-size: 0.75rem;
+        min-height: 60px;
       }
 
-      .price-row {
-        display: block;
+      .product-footer {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .buy {
-        display: block;
+      .price {
+        font-size: 1rem;
+      }
+
+      .view-btn {
         text-align: center;
-        margin-top: 12px;
       }
 
     }
@@ -540,30 +609,33 @@
 
 <body>
 
-  <!-- NAVBAR -->
+
+  <!-- ================= NAVBAR ================= -->
 
   <nav>
+
     <div class="logo">
       RXHN <span>GETS</span>
     </div>
 
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#products">Supplements</a></li>
-      <li><a href="#featured">Featured</a></li>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#products">PRODUCTS</a></li>
+      <li><a href="#about">ABOUT</a></li>
     </ul>
 
-    <div class="nav-icons">
-      🔍 🛒
+    <div class="nav-right">
+      <div class="cart">🛒 SHOP</div>
     </div>
+
   </nav>
 
 
-  <!-- HERO -->
+  <!-- ================= HERO ================= -->
 
   <section class="hero" id="home">
 
-    <div class="hero-text">
+    <div class="hero-content">
 
       <div class="hero-tag">
         PREMIUM FITNESS NUTRITION
@@ -580,67 +652,80 @@
       </p>
 
       <div class="hero-buttons">
+
         <a href="#products" class="btn btn-primary">
-          Shop Products
+          SHOP PRODUCTS →
         </a>
 
-        <a href="#featured" class="btn btn-dark">
-          Explore
+        <a href="#about" class="btn btn-secondary">
+          EXPLORE
         </a>
+
       </div>
 
     </div>
 
-    <div class="hero-image">
+
+    <!-- YOUR REAL PRODUCT IMAGE -->
+
+    <div class="hero-product">
+
       <img
-        src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1000&q=90"
-        alt="Fitness Athlete"
+        src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/89f731fa-0d67-41f0-a949-cd33ca67db0c/Avvatar-Whey-Protein-Belgian-Chocolate.jpeg"
+        alt="Avvatar Whey Protein"
       >
+
     </div>
 
   </section>
 
 
-  <!-- TRUST -->
+  <!-- ================= TRUST BAR ================= -->
 
-  <div class="trust">
+  <section class="trust-bar">
 
     <div class="trust-item">
       <h3>✓ PREMIUM PICKS</h3>
-      <p>Selected fitness products</p>
-    </div>
-
-    <div class="trust-item">
-      <h3>⚡ FAST DISCOVERY</h3>
-      <p>Find what fits your goals</p>
+      <p>Quality fitness products</p>
     </div>
 
     <div class="trust-item">
       <h3>💪 FITNESS FOCUSED</h3>
-      <p>Built for serious training</p>
+      <p>For your training goals</p>
     </div>
 
     <div class="trust-item">
-      <h3>★ QUALITY BRANDS</h3>
-      <p>Popular supplement brands</p>
+      <h3>⚡ TOP SUPPLEMENTS</h3>
+      <p>Popular nutrition choices</p>
     </div>
 
-  </div>
+    <div class="trust-item">
+      <h3>★ BEST BRANDS</h3>
+      <p>Discover trusted products</p>
+    </div>
+
+  </section>
 
 
-  <!-- PRODUCTS -->
+  <!-- ================= PRODUCTS ================= -->
 
   <section class="products-section" id="products">
 
     <div class="section-header">
 
       <div>
+
         <small>RXHN COLLECTION</small>
-        <h2>SHOP SUPPLEMENTS</h2>
+
+        <h2>
+          FEATURED PRODUCTS
+        </h2>
+
       </div>
 
       <p>
-        Explore popular protein, creatine and fitness nutrition products.
+        Explore popular fitness supplements and discover products
+        that match your training goals.
       </p>
 
     </div>
@@ -648,12 +733,12 @@
 
     <!-- SEARCH -->
 
-    <div class="search-box">
+    <div class="search-container">
 
       <input
         type="text"
         id="searchInput"
-        placeholder="Search products..."
+        placeholder="Search supplements..."
       >
 
       <button onclick="searchProducts()">
@@ -663,7 +748,9 @@
     </div>
 
 
-    <div class="products" id="productGrid">
+    <!-- PRODUCT GRID -->
+
+    <div class="product-grid" id="productGrid">
 
 
       <!-- PRODUCT 1 -->
@@ -672,43 +759,43 @@
 
         <div class="product-image">
 
-          <span class="badge-product">
+          <span class="badge">
             BESTSELLER
           </span>
 
           <img
-            src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?auto=format&fit=crop&w=700&q=90"
-            alt="Avvatar Alpha Whey Protein"
+            src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/89f731fa-0d67-41f0-a949-cd33ca67db0c/Avvatar-Whey-Protein-Belgian-Chocolate.jpeg"
+            alt="Avvatar Whey Protein Belgian Chocolate"
           >
 
         </div>
 
         <div class="product-info">
 
-          <div class="product-brand">
+          <div class="brand">
             AVVATAR
           </div>
 
           <h3>
-            Alpha Whey Protein 1 KG
+            Avvatar Alpha Whey Protein 1 KG
           </h3>
 
           <div class="rating">
             ★★★★★
           </div>
 
-          <div class="price-row">
+          <div class="product-footer">
 
             <div class="price">
               ₹1,599
             </div>
 
             <a
-              href="https://avataarindia.com/"
+              href="https://avataarindia.com/product/alpha-whey-belgian-chocolate-flavour-1-kg-2509104129-263"
               target="_blank"
-              class="buy"
+              class="view-btn"
             >
-              VIEW →
+              BUY NOW →
             </a>
 
           </div>
@@ -724,32 +811,34 @@
 
         <div class="product-image">
 
-          <span class="badge-product">
-            VALUE PACK
+          <span class="badge">
+            2 KG PACK
           </span>
 
+          <!-- SAME REAL AVVATAR IMAGE -->
+
           <img
-            src="https://images.unsplash.com/photo-1622484212850-eb596e0c5a32?auto=format&fit=crop&w=700&q=90"
-            alt="Whey Protein"
+            src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/89f731fa-0d67-41f0-a949-cd33ca67db0c/Avvatar-Whey-Protein-Belgian-Chocolate.jpeg"
+            alt="Avvatar Whey Protein 2 KG"
           >
 
         </div>
 
         <div class="product-info">
 
-          <div class="product-brand">
+          <div class="brand">
             AVVATAR
           </div>
 
           <h3>
-            Alpha Whey Protein 2 KG
+            Avvatar Alpha Whey Protein 2 KG
           </h3>
 
           <div class="rating">
             ★★★★★
           </div>
 
-          <div class="price-row">
+          <div class="product-footer">
 
             <div class="price">
               ₹3,113
@@ -758,9 +847,9 @@
             <a
               href="https://avataarindia.com/"
               target="_blank"
-              class="buy"
+              class="view-btn"
             >
-              VIEW →
+              BUY NOW →
             </a>
 
           </div>
@@ -776,12 +865,12 @@
 
         <div class="product-image">
 
-          <span class="badge-product">
-            POWER
+          <span class="badge">
+            CREATINE
           </span>
 
           <img
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=700&q=90"
+            src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/89f731fa-0d67-41f0-a949-cd33ca67db0c/Avvatar-Whey-Protein-Belgian-Chocolate.jpeg"
             alt="Creatine Supplement"
           >
 
@@ -789,8 +878,8 @@
 
         <div class="product-info">
 
-          <div class="product-brand">
-            CREATINE
+          <div class="brand">
+            FITNESS
           </div>
 
           <h3>
@@ -801,14 +890,14 @@
             ★★★★★
           </div>
 
-          <div class="price-row">
+          <div class="product-footer">
 
             <div class="price">
               ₹899
             </div>
 
-            <a href="#" class="buy">
-              VIEW →
+            <a href="#" class="view-btn">
+              BUY NOW →
             </a>
 
           </div>
@@ -824,135 +913,39 @@
 
         <div class="product-image">
 
-          <span class="badge-product">
-            RECOVERY
+          <span class="badge">
+            PROTEIN
           </span>
 
           <img
-            src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=700&q=90"
-            alt="Protein Supplement"
+            src="https://cdn.zeptonow.com/production/ik-seo/cms/product_variant/89f731fa-0d67-41f0-a949-cd33ca67db0c/Avvatar-Whey-Protein-Belgian-Chocolate.jpeg"
+            alt="Premium Protein"
           >
 
         </div>
 
         <div class="product-info">
 
-          <div class="product-brand">
-            PROTEIN
+          <div class="brand">
+            RXHN PICKS
           </div>
 
           <h3>
-            High Protein Supplement
+            Premium Whey Protein
           </h3>
 
           <div class="rating">
             ★★★★★
           </div>
 
-          <div class="price-row">
+          <div class="product-footer">
 
             <div class="price">
               ₹1,299
             </div>
 
-            <a href="#" class="buy">
-              VIEW →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 5 -->
-
-      <article class="product-card product">
-
-        <div class="product-image">
-
-          <span class="badge-product">
-            PRE WORKOUT
-          </span>
-
-          <img
-            src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=700&q=90"
-            alt="Pre Workout"
-          >
-
-        </div>
-
-        <div class="product-info">
-
-          <div class="product-brand">
-            ENERGY
-          </div>
-
-          <h3>
-            Advanced Pre Workout
-          </h3>
-
-          <div class="rating">
-            ★★★★★
-          </div>
-
-          <div class="price-row">
-
-            <div class="price">
-              ₹1,099
-            </div>
-
-            <a href="#" class="buy">
-              VIEW →
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 6 -->
-
-      <article class="product-card product">
-
-        <div class="product-image">
-
-          <span class="badge-product">
-            DAILY USE
-          </span>
-
-          <img
-            src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=700&q=90"
-            alt="Fitness Nutrition"
-          >
-
-        </div>
-
-        <div class="product-info">
-
-          <div class="product-brand">
-            FITNESS
-          </div>
-
-          <h3>
-            Essential Fitness Nutrition
-          </h3>
-
-          <div class="rating">
-            ★★★★★
-          </div>
-
-          <div class="price-row">
-
-            <div class="price">
-              ₹799
-            </div>
-
-            <a href="#" class="buy">
-              VIEW →
+            <a href="#" class="view-btn">
+              BUY NOW →
             </a>
 
           </div>
@@ -967,9 +960,13 @@
   </section>
 
 
-  <!-- CTA -->
+  <!-- ================= ABOUT / CTA ================= -->
 
-  <section class="cta" id="featured">
+  <section class="cta" id="about">
+
+    <small>
+      RXHN GETS
+    </small>
 
     <h2>
       TRAIN HARDER.<br>
@@ -977,20 +974,20 @@
     </h2>
 
     <p>
-      RXHN GETS brings your favourite fitness products together
-      in one powerful place.
+      A clean place to discover premium fitness supplements
+      and nutrition products for your next level.
     </p>
 
     <br>
 
     <a href="#products" class="btn btn-primary">
-      Explore Products →
+      EXPLORE PRODUCTS →
     </a>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- ================= FOOTER ================= -->
 
   <footer>
 
@@ -999,7 +996,7 @@
     </h2>
 
     <p>
-      Your destination for fitness products and supplement discovery.
+      Premium Fitness & Nutrition Products
     </p>
 
     <p style="margin-top:25px;">
@@ -1009,7 +1006,7 @@
   </footer>
 
 
-  <!-- JAVASCRIPT -->
+  <!-- ================= JAVASCRIPT ================= -->
 
   <script>
 
@@ -1043,9 +1040,13 @@
 
     }
 
+
     document
       .getElementById("searchInput")
-      .addEventListener("keyup", searchProducts);
+      .addEventListener(
+        "keyup",
+        searchProducts
+      );
 
   </script>
 
